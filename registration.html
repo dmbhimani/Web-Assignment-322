@@ -1,0 +1,121 @@
+<head>
+    <title>Blog Page</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" 
+    integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" 
+    integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+    <link rel ="stylesheet" href="/css/index.css"/>
+</head>
+<body>
+    <a href = "/Blog">
+        <br><br>
+        <img src = "/images/Logo_1.png" style="display:block; margin-left: auto; margin-right:auto; width: 240px; height: 150px;"/>
+    </a><br>
+    <nav class="navbar navbar-light">
+        <div class="container-fluid">
+            <a class="navbar-brand">
+                <div class="box">&emsp;
+                    <a href = "/Blog" style="font-size: larger; text-decoration: none; color: black;">Blog</a>&emsp;&emsp;&emsp;
+                    <a href = "/article/:id" style="font-size: larger; text-decoration: none; color: black;">Read More</a>&emsp;&emsp;&emsp;
+                    <a href = "/registration" style="font-size: larger; text-decoration: none; color: black;">Register</a>&emsp;&emsp;&emsp;
+                    <a href = "/login" style="font-family:Verdana, Geneva, Tahoma, sans-serif; text-decoration: none; color: black;">Login</a>&emsp;&emsp;
+                </div>
+            </a>
+        </div>
+    </nav><br><br>
+    <h1 style="text-align: center;">Create an Account</h1><br>
+    <p style="text-align: center;">Personal Information</p>
+    <div class="row">
+        <div class="col-1"></div>
+        <div class="col-5">
+            <div class="form-floating mb-3" style=" margin:auto;">
+                <input type="text" class="form-control" id="firstName" name="firstName" placeholder="First Name"/>
+                <label for="firstName">&emsp;First Name</label>
+            </div>
+        </div>
+        <div class="col-5">
+            <div class="form-floating mb-3" style=" margin:auto;">
+                <input type="text" class="form-control" id="lastName" name="lastName" placeholder="Last Name" />
+                <label for="lastName">&emsp;Last Name</label>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-1"></div>
+        <div class="col-5">
+            <div class="form-floating mb-3" style="margin:auto;">
+                <input type="text" class="form-control" id="email" name="email" placeholder="Email" />
+                <label for="email">&emsp;Email</label>
+            </div>
+        </div>
+        <div class="col-5">
+            <div class="form-floating mb-3" style="margin:auto;">
+                <input type="number" class="form-control" id="phone" name="phone" placeholder="Phone" />
+                <label for="phone">&emsp;Phone Number</label>
+            </div>
+        </div>
+    </div><br>
+    <p style="text-align: center;">Billing Information</p>
+    <div class="form-floating mb-3" style="width: 83%; margin:auto;">
+        <input type="text" class="form-control" id="companyName" name="companyName" placeholder="Company Name" />
+        <label for="companyName">&emsp;Company Name (optional)</label>
+    </div>
+    <div class="form-floating mb-3" style="width: 83%; margin:auto;">
+        <input type="text" class="form-control" id="streetAddress" name="streetAddress" placeholder="Street Address" />
+        <label for="streetAddress">&emsp;Street Address</label>
+    </div>
+    <div class="form-floating mb-3" style="width: 83%; margin:auto;">
+        <input type="text" class="form-control" id="streetAddress2" name="streetAddress2" placeholder="Street Address 2" />
+        <label for="streetAddress2">&emsp;Street Address 2</label>
+    </div>
+    <div class="row">
+        <div class="col-1"></div>
+        <div class="col-3">
+            <div class="form-floating mb-3" style="width: 83%; margin:auto;">
+                <input type="text" class="form-control" id="city" name="city" placeholder="City" />
+                <label for="city">&emsp;City</label>
+            </div>
+        </div>
+        <div class="col-4">
+            <div class="form-floating mb-3" style="width: 83%; margin:auto;">
+                <input type="text" class="form-control" id="province" name="province" placeholder="Province" />
+                <label for="province">&emsp;Province</label>
+            </div>
+        </div>
+        <div class="col-3">
+            <div class="form-floating mb-3" style="width: 83%; margin:auto;">
+                <input type="text" class="form-control" id="postalCode" name="postalCode" placeholder="Postal Code" />
+                <label for="postalCode">&emsp;Postal Code</label>
+            </div>
+        </div>
+    </div>
+    <div class="form-floating mb-3" style="width: 83%; margin:auto;">
+        <input type="text" class="form-control" id="country" name="country" placeholder="Country" value=""/>
+        <label for="country">&emsp;Country</label>
+    </div>
+    <div class="form-floating mb-3" style="width: 83%; margin:auto;">
+        <input type="text" class="form-control" id="taxId" name="taxId" placeholder="Tax ID" />
+        <label for="taxId">&emsp;Tax ID (optional)</label>
+    </div><br>
+    <p style="text-align: center;">Billing Information</p>
+    <div class="row">
+        <div class="col-1"></div>
+        <div class="col-5">
+            <div class="form-floating mb-3" style=" margin:auto;">
+                <input type="text" class="form-control" id="password" name="password" placeholder="Password"/>
+                <label for="password">&emsp;Password</label>
+            </div>
+        </div>
+        <div class="col-5">
+            <div class="form-floating mb-3" style=" margin:auto;">
+                <input type="text" class="form-control" id="confirmPassword" name="confirmPassword" placeholder="Confirm Password" />
+                <label for="confirmPassword">&emsp;Confirm Password</label>
+            </div>
+        </div>
+    </div>
+    <p class="text-muted" style="text-align: center;">Password Strength: Enter a Password</p><br><br>
+        <div class="d-grid" style="width: 50%; margin:auto;">
+            <button class="btn btn-primary" type="submit">Register</button>
+        </div><br>
+    <p class="lead" style="text-align: center;">Already have an account? <a href="/login">Sign in</a>.</p>
+</body>

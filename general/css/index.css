@@ -1,0 +1,19 @@
+body{
+    background-color:white;
+}
+
+.box
+{
+  background-color: white;
+  width: max-content;
+  border: 3px solid burlywood;
+  border-radius: 25px;
+  padding: 10px;
+  margin: auto;
+}
+
+* {box-sizing: border-box}
+
+
+
+
