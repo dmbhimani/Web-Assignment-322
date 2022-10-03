@@ -7,6 +7,10 @@ const app = express();
 app.use(express.static("general"));
 
 // All routs are defined here
+app.get("/", (req,res) => {
+    res.redirect("/Blog");
+});
+
 app.get("/Blog", (req,res) => {
     res.sendFile(path.join(__dirname, "blog.html"))
 });
