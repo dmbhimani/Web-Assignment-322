@@ -1,75 +1,103 @@
+<form method="POST" action="/registration">
 <h1 style="text-align: center;">Create an Account</h1><br>
-    <p style="text-align: center;">Personal Information</p>
-    <div class="row">
-        <div class="col-1"></div>
-        <div class="col-5">
-            <div class="form-floating mb-3" style=" margin:auto;">
-                <input type="text" class="form-control" id="firstName" name="firstName" placeholder="First Name"/>
-                <label for="firstName">&emsp;First Name</label>
-            </div>
-        </div>
-        <div class="col-5">
-            <div class="form-floating mb-3" style=" margin:auto;">
-                <input type="text" class="form-control" id="lastName" name="lastName" placeholder="Last Name" />
-                <label for="lastName">&emsp;Last Name</label>
-            </div>
+<p style="text-align: center;">Personal Information</p>
+<div class="row">
+    <div class="col-1"></div>
+    <div class="col-5">
+        <div class="form-floating mb-3" style=" margin:auto;">
+            <input type="text" class="form-control" id="firstName" name="firstName" value="{{values.firstName}}" placeholder="First Name"/>
+            <label for="firstName">&emsp;First Name</label>
+            {{#if validationMessage.firstName}}
+                <span style="color: red;">{{validationMessage.firstName}}</span>
+            {{/if}}
         </div>
     </div>
-    <div class="row">
-        <div class="col-1"></div>
-        <div class="col-5">
-            <div class="form-floating mb-3" style="margin:auto;">
-                <input type="text" class="form-control" id="email" name="email" placeholder="Email" />
-                <label for="email">&emsp;Email</label>
-            </div>
+    <div class="col-5">
+        <div class="form-floating mb-3" style=" margin:auto;">
+            <input type="text" class="form-control" id="lastName" name="lastName" value="{{values.lastName}}" placeholder="Last Name" />
+            <label for="lastName">&emsp;Last Name</label>
+            {{#if validationMessage.lastName}}
+                <span style="color: red;">{{validationMessage.lastName}}</span>
+            {{/if}}
         </div>
-        <div class="col-5">
-            <div class="form-floating mb-3" style="margin:auto;">
-                <input type="number" class="form-control" id="phone" name="phone" placeholder="Phone" />
-                <label for="phone">&emsp;Phone Number</label>
-            </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-1"></div>
+    <div class="col-5">
+        <div class="form-floating mb-3" style="margin:auto;">
+            <input type="text" class="form-control" id="email" name="email" value="{{values.email}}" placeholder="Email" />
+            <label for="email">&emsp;Email</label>
+            {{#if validationMessage.email}}
+                <span style="color: red;">{{validationMessage.email}}</span>
+            {{/if}}
         </div>
-    </div><br>
-    <p style="text-align: center;">Billing Information</p>
-    <div class="form-floating mb-3" style="width: 83%; margin:auto;">
-        <input type="text" class="form-control" id="companyName" name="companyName" placeholder="Company Name" />
-        <label for="companyName">&emsp;Company Name (optional)</label>
     </div>
-    <div class="form-floating mb-3" style="width: 83%; margin:auto;">
-        <input type="text" class="form-control" id="streetAddress" name="streetAddress" placeholder="Street Address" />
-        <label for="streetAddress">&emsp;Street Address</label>
+    <div class="col-5">
+        <div class="form-floating mb-3" style="margin:auto;">
+            <input type="number" class="form-control" id="phone" name="phone" value="{{values.phone}}" placeholder="Phone" />
+            <label for="phone">&emsp;Phone Number</label>
+            {{#if validationMessage.phone}}
+                <span style="color: red;">{{validationMessage.phone}}</span>
+            {{/if}}
+        </div>
     </div>
-    <div class="form-floating mb-3" style="width: 83%; margin:auto;">
-        <input type="text" class="form-control" id="streetAddress2" name="streetAddress2" placeholder="Street Address 2" />
-        <label for="streetAddress2">&emsp;Street Address 2</label>
+</div><br>
+<p style="text-align: center;">Billing Information</p>
+<div class="form-floating mb-3" style="width: 83%; margin:auto;">
+    <input type="text" class="form-control" id="companyName" name="companyName" value="{{values.companyName}}" placeholder="Company Name" />
+    <label for="companyName">&emsp;Company Name (optional)</label>
+</div>
+<div class="form-floating mb-3" style="width: 83%; margin:auto;">
+    <input type="text" class="form-control" id="streetAddress" name="streetAddress" value="{{values.streetAddress}}" placeholder="Street Address" />
+    <label for="streetAddress">&emsp;Street Address</label>
+    {{#if validationMessage.streetAddress}}
+        <span style="color: red;">{{validationMessage.streetAddress}}</span>
+    {{/if}}
+</div>
+<div class="form-floating mb-3" style="width: 83%; margin:auto;">
+        <input type="text" class="form-control" id="streetAddress2" name="streetAddress2" value="{{values.streetAddress2}}" placeholder="Street Address 2" />
+        <label for="streetAddress2">&emsp;Street Address 2 (optional)</label>
     </div>
     <div class="row">
         <div class="col-1"></div>
         <div class="col-3">
             <div class="form-floating mb-3" style="width: 83%; margin:auto;">
-                <input type="text" class="form-control" id="city" name="city" placeholder="City" />
+                <input type="text" class="form-control" id="city" name="city" value="{{values.city}}" placeholder="City" />
                 <label for="city">&emsp;City</label>
+                {{#if validationMessage.city}}
+            <span style="color: red;">{{validationMessage.city}}</span>
+        {{/if}}
             </div>
         </div>
         <div class="col-4">
             <div class="form-floating mb-3" style="width: 83%; margin:auto;">
-                <input type="text" class="form-control" id="province" name="province" placeholder="Province" />
+                <input type="text" class="form-control" id="province" name="province" value="{{values.province}}" placeholder="Province" />
                 <label for="province">&emsp;Province</label>
+                {{#if validationMessage.province}}
+            <span style="color: red;">{{validationMessage.province}}</span>
+        {{/if}}
             </div>
         </div>
         <div class="col-3">
             <div class="form-floating mb-3" style="width: 83%; margin:auto;">
-                <input type="text" class="form-control" id="postalCode" name="postalCode" placeholder="Postal Code" />
+                <input type="text" class="form-control" id="postalCode" name="postalCode" value="{{values.postalCode}}" placeholder="Postal Code" />
                 <label for="postalCode">&emsp;Postal Code</label>
+                {{#if validationMessage.postalCode}}
+            <span style="color: red;">{{validationMessage.postalCode}}</span>
+        {{/if}}
             </div>
         </div>
     </div>
     <div class="form-floating mb-3" style="width: 83%; margin:auto;">
-        <input type="text" class="form-control" id="country" name="country" placeholder="Country" value=""/>
+        <input type="text" class="form-control" id="country" name="country" value="{{values.country}}" placeholder="Country"/>
         <label for="country">&emsp;Country</label>
+        {{#if validationMessage.country}}
+            <span style="color: red;">{{validationMessage.country}}</span>
+        {{/if}}
     </div>
     <div class="form-floating mb-3" style="width: 83%; margin:auto;">
-        <input type="text" class="form-control" id="taxId" name="taxId" placeholder="Tax ID" />
+        <input type="text" class="form-control" id="taxId" name="taxId" value="{{values.taxId}}" placeholder="Tax ID" />
         <label for="taxId">&emsp;Tax ID (optional)</label>
     </div><br>
     <p style="text-align: center;">Billing Information</p>
@@ -77,14 +105,20 @@
         <div class="col-1"></div>
         <div class="col-5">
             <div class="form-floating mb-3" style=" margin:auto;">
-                <input type="text" class="form-control" id="password" name="password" placeholder="Password"/>
+                <input type="text" class="form-control" id="password" name="password" value="{{values.password}}" placeholder="Password"/>
                 <label for="password">&emsp;Password</label>
+                {{#if validationMessage.password}}
+            <span style="color: red;">{{validationMessage.password}}</span>
+        {{/if}}
             </div>
         </div>
         <div class="col-5">
             <div class="form-floating mb-3" style=" margin:auto;">
-                <input type="text" class="form-control" id="confirmPassword" name="confirmPassword" placeholder="Confirm Password" />
+                <input type="text" class="form-control" id="confirmPassword" name="confirmPassword" value="{{values.confirmPassword}}" placeholder="Confirm Password" />
                 <label for="confirmPassword">&emsp;Confirm Password</label>
+                {{#if validationMessage.confirmPassword}}
+            <span style="color: red;">{{validationMessage.confirmPassword}}</span>
+        {{/if}}
             </div>
         </div>
     </div>
@@ -93,3 +127,4 @@
             <button class="btn btn-primary" type="submit">Register</button>
         </div><br>
     <p class="lead" style="text-align: center;">Already have an account? <a href="/login">Sign in</a>.</p>
+    </form>

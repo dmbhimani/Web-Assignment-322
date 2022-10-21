@@ -25,6 +25,80 @@ app.get("/registration", (req,res) => {
     res.render("general/registration");
 });
 
+app.post("/registration", (req,res) => {
+    
+    console.log(req.body);
+    const {firstName, lastName, email, phone, companyName, streetAddress, streetAddress2, city, province, postalCode, country, taxId, password, confirmPassword} = req.body;
+
+    let passedValidation = true;
+    let validationMessage = {};
+
+    if(firstName.trim().length == 0){
+        passedValidation = false;
+        validationMessage.firstName = "You must enter an First Name";
+    }
+
+    else if(lastName.trim().length == 0){
+        passedValidation = false;
+        validationMessage.lastName = "You must enter a Last Name";
+    }
+
+    else if(email.trim().length == 0){
+        passedValidation = false;
+        validationMessage.email = "You must enter an email";
+    }
+
+    else if(phone.trim().length == 0){
+        passedValidation = false;
+        validationMessage.phone = "You must enter a phone number";
+    }
+
+    else if(streetAddress.trim().length == 0){
+        passedValidation = false;
+        validationMessage.streetAddress = "You must enter your street address";
+    }
+
+    else if(city.trim().length == 0){
+        passedValidation = false;
+        validationMessage.city = "You must enter the city you where currently live";
+    }
+
+    else if(province.trim().length == 0){
+        passedValidation = false;
+        validationMessage.province = "You must enter a province for the city";
+    }
+
+    else if(postalCode.trim().length == 0){
+        passedValidation = false;
+        validationMessage.postalCode = "You must enter a postal code";
+    }
+
+    else if(country.trim().length == 0){
+        passedValidation = false;
+        validationMessage.country = "You must enter the country where you currently reside";
+    }
+
+    else if(password.trim().length == 0){
+        passedValidation = false;
+        validationMessage.password = "You must enter a password";
+    }
+
+    else if(confirmPassword.trim().length == 0){
+        passedValidation = false;
+        validationMessage.confirmPassword = "You must confirm your passwords";
+    }
+
+    if(passedValidation){
+        res.redirect("/Blog");
+    }
+    else{
+        res.render("general/registration", {
+            values : req.body,
+            validationMessage
+        });
+    }
+}); 
+
 app.get("/login", (req,res) => {
     res.render("general/login");
 });
