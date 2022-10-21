@@ -1,15 +1,22 @@
-<h1 style="text-align: center;">Sign In</h1><br><br>
+<form method="POST" action="/login">
+    <h1 style="text-align: center;">Sign In</h1><br><br>
     <div class="form-floating mb-3" style="width: 50%; margin:auto;">
-        <input type="text" class="form-control" id="email" name="email" placeholder="Email" />
+        <input type="text" class="form-control" id="email" name="email" value ="{{values.email}}" placeholder="Email" />
         <label for="email">&emsp;Email</label>
+        {{#if validationMessage.email}}
+            <span style="color: red;">{{validationMessage.email}}</span>
+        {{/if}}
     </div>
     <div class="form-floating mb-3" style="width: 50%; margin:auto;">
-        <input type="text" class="form-control" id="password" name="password" placeholder="Password"/>
+        <input type="text" class="form-control" id="password" name="password" value ="{{values.password}}" placeholder="Password"/>
         <label for="password">&emsp;Password</label>
+        {{#if validationMessage.password}}
+            <span style="color: red;">{{validationMessage.password}}</span>
+        {{/if}}
     </div>
     <p style="text-align: center;"><a href="" class="text-muted" style="text-decoration:none;">Forget Password ?</a></p>
     <div class="d-grid" style="width: 50%; margin:auto;">
         <button class="btn btn-primary" type="submit">Sign In</button>
-    </div>
-    <br>
+    </div><br>
     <p class="lead" style="text-align: center;">Don't have an account? <a href="/registration">Register</a></p>
+</form>
