@@ -1,10 +1,12 @@
 const express = require("express");
-const path = require("path");
-
-
 const app = express();
+const path = require("path");
+const exphbs = require('express-handlebars');
 
+app.engine('.hbs', exphbs.engine({ extname: '.hbs', defaultLayout: "main" }));
+app.set('view engine', '.hbs');
 app.use(express.static("general"));
+app.use(express.urlencoded({ extended: false }));
 
 // All routs are defined here
 app.get("/", (req,res) => {
@@ -12,24 +14,21 @@ app.get("/", (req,res) => {
 });
 
 app.get("/Blog", (req,res) => {
-    res.sendFile(path.join(__dirname, "Blog.html"))
+    res.render("general/Blog");
 });
 
 app.get("/article/:id", (req,res) => {
-    res.sendFile(path.join(__dirname, "read_more.html"));
+    res.render("general/read_more");
 });
 
 app.get("/registration", (req,res) => {
-    res.sendFile(path.join(__dirname, "registration.html"));
+    res.render("general/registration");
 });
 
 app.get("/login", (req,res) => {
-    res.sendFile(path.join(__dirname, "login.html"));
+    res.render("general/login");
 });
 
-// app.use(function(req, res, next){
-//     res.send("The info is wrong");
-// });
 
 
 
