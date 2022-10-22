@@ -32,6 +32,9 @@ app.post("/registration", (req,res) => {
 
     let passedValidation = true;
     let validationMessage = {};
+    
+    let pass1 = req.body.password;
+    let pass2 = req.body.confirmPassword;
 
     if(firstName.trim().length == 0){
         passedValidation = false;
@@ -87,6 +90,25 @@ app.post("/registration", (req,res) => {
         passedValidation = false;
         validationMessage.confirmPassword = "You must confirm your passwords";
     }
+    
+    ////// 3 complex validation criteria
+
+    else if(pass1 !== pass2){
+        passedValidation = false;
+        validationMessage.confirmPassword = "Your passwords do not match"
+    }
+
+    else if(firstName.length <= 2){
+        passedValidation =false;
+        validationMessage.firstName = "First name should be at least 3 character";
+    }
+
+    else if(postalCode.length = 6){
+        passedValidation = false;
+        validationMessage.postalCode = "Postal code should be 6 character in length"
+    }
+    
+
 
     if(passedValidation){
         res.redirect("/Blog");
