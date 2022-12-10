@@ -105,7 +105,7 @@
         <div class="col-1"></div>
         <div class="col-5">
             <div class="form-floating mb-3" style=" margin:auto;">
-                <input type="text" class="form-control" id="password" name="password" value="{{values.password}}" placeholder="Password"/>
+                <input type="Password" class="form-control" id="password" name="password" value="{{values.password}}" placeholder="Password"/>
                 <label for="password">&emsp;Password</label>
                 {{#if validationMessage.password}}
             <span style="color: red;">{{validationMessage.password}}</span>
@@ -114,7 +114,7 @@
         </div>
         <div class="col-5">
             <div class="form-floating mb-3" style=" margin:auto;">
-                <input type="text" class="form-control" id="confirmPassword" name="confirmPassword" value="{{values.confirmPassword}}" placeholder="Confirm Password" />
+                <input type="Password" class="form-control" id="confirmPassword" name="confirmPassword" value="{{values.confirmPassword}}" placeholder="Confirm Password" />
                 <label for="confirmPassword">&emsp;Confirm Password</label>
                 {{#if validationMessage.confirmPassword}}
             <span style="color: red;">{{validationMessage.confirmPassword}}</span>
@@ -122,9 +122,18 @@
             </div>
         </div>
     </div>
-    <p class="text-muted" style="text-align: center;">Password Strength: Enter a Password</p><br><br>
-        <div class="d-grid" style="width: 50%; margin:auto;">
-            <button class="btn btn-primary" type="submit">Register</button>
-        </div><br>
+    <p class="text-muted" style="text-align: center;">Password Strength: Enter a Password</p><br>
+    <div class="col" style="text-align: center;">
+        <input type="radio" class="btn-check" name="SignType" id="user" value="user">
+        <label class="btn btn-outline-dark btn-lg" for="user">User</label>&emsp;&emsp;
+        <input type="radio" class="btn-check" name="SignType" id="admin" value="admin">
+        <label class="btn btn-outline-dark btn-lg" for="admin">Admin</label>
+    </div><br><br>
+    {{#each errors}}
+        <p style="color:red; text-align:center;">{{this}}</p>
+    {{/each}}
+    <div class="d-grid" style="width: 50%; margin:auto;">
+        <button class="btn btn-primary" type="submit">Register</button>
+    </div><br>
     <p class="lead" style="text-align: center;">Already have an account? <a href="/login">Sign in</a>.</p>
     </form>

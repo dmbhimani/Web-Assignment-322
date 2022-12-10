@@ -7,8 +7,14 @@
             <div class="box">&emsp;
                 <a href = "/Blog" style="font-size: larger; text-decoration: none; color: black;">Blog</a>&emsp;&emsp;&emsp;
                 <a href = "/article/:id" style="font-size: larger; text-decoration: none; color: black;">Read More</a>&emsp;&emsp;&emsp;
+                {{#if user}}
+                <a href = "/logout" style="font-size: larger; text-decoration: none; color: black;">Logout</a>&emsp;&emsp;&emsp;
+                {{else if admin}}
+                <a href = "/logout" style="font-size: larger; text-decoration: none; color: black;">Logout</a>&emsp;&emsp;&emsp;
+                {{else}}
                 <a href = "/registration" style="font-size: larger; text-decoration: none; color: black;">Register</a>&emsp;&emsp;&emsp;
                 <a href = "/login" style="font-family:Verdana, Geneva, Tahoma, sans-serif; text-decoration: none; color: black;">Login</a>&emsp;&emsp;
+                {{/if}}
             </div>
         </a>
     </div>

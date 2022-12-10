@@ -8,13 +8,16 @@
         {{/if}}
     </div>
     <div class="form-floating mb-3" style="width: 50%; margin:auto;">
-        <input type="text" class="form-control" id="password" name="password" value ="{{values.password}}" placeholder="Password"/>
+        <input type="Password" class="form-control" id="password" name="password" value ="{{values.password}}" placeholder="Password"/>
         <label for="password">&emsp;Password</label>
         {{#if validationMessage.password}}
             <span style="color: red;">{{validationMessage.password}}</span>
         {{/if}}
     </div>
     <p style="text-align: center;"><a href="" class="text-muted" style="text-decoration:none;">Forget Password ?</a></p>
+    {{#each errors}}
+        <p style="color:red; text-align:center;">{{this}}</p>
+    {{/each}}
     <div class="d-grid" style="width: 50%; margin:auto;">
         <button class="btn btn-primary" type="submit">Sign In</button>
     </div><br>
